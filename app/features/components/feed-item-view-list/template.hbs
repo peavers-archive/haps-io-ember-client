@@ -1,0 +1,32 @@
+{{#unless isSeen}}
+  <div class="columns feed-item-view-list is-desktop is-mobile is-vcentered">
+
+    <div class="column is-1">
+      <div class="item-source">
+        <a href="{{item.sourceLink}}">{{item.sourceTitle}}</a>
+      </div>
+    </div>
+
+    <div class="column is-10">
+
+      <div class="content">
+        <div class="item-title">
+          <a href="{{item.link}}" target="_blank">
+            {{item.title}} <span class="item-meta">{{moment-from item.createdAt hideAffix=true hideSuffix=true}}</span>
+          </a>
+        </div>
+
+        <div class="item-description">
+          {{item.description}}
+        </div>
+
+      </div>
+    </div>
+
+    <div class="column is-1 is-gapless is-narrow">
+      <div class="is-pulled-right" {{action "seen" item}}>
+        <i class="fa fa-fw fa-check"></i>
+      </div>
+    </div>
+  </div>
+{{/unless}}

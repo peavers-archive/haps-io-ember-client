@@ -1,0 +1,44 @@
+<nav class="navbar">
+
+  <div class="navbar-brand">
+    {{#link-to "news" tagName="a" classNames="navbar-item"}}
+      <img src="/assets/favicon.png" alt="haps.io" class="haps-image"><span class="haps-text">haps.io</span>
+    {{/link-to}}
+  </div>
+
+  <div class="navbar-menu">
+    <div class="navbar-end">
+
+      <div class="navbar-item">
+        {{#if session.isAuthenticated}}
+          {{#rl-dropdown-container class="aurora-dropdown-menu"}}
+
+            {{#rl-dropdown-toggle tagName="div" class="dropdown-title Open"}}
+              <div class="people-avatar">
+                <img src="{{session.data.authenticated.profile.picture}}"><i
+                class="fa fa-fw fa-angle-down"></i>
+              </div>
+            {{/rl-dropdown-toggle}}
+
+            {{#rl-dropdown tagName="div" class="menu-dropdown" closeOnChildClick=true}}
+              <ul class="menu-dropdownItems">
+                <li class="is-disabled">
+                  {{session.data.authenticated.profile.name}}
+                </li>
+                <li class="divider"></li>
+                <li>
+                  {{#link-to "users.edit" currentUser.user.id}}Settings{{/link-to}}
+                </li>
+                <li>
+                  <a href="#" {{action "logout" }}>Logout</a>
+                </li>
+              </ul>
+            {{/rl-dropdown}}
+          {{/rl-dropdown-container}}
+        {{else}}
+          <a class="button is-primary" {{action "login"}}>login</a>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,31 @@
+<div class="columns is-multiline">
+
+  {{#each newsItems as |item|}}
+    {{#if (eq viewType "list")}}
+      <div class="column is-12">
+        {{feed-item-view-list item=item seen='seen'}}
+      </div>
+    {{/if}}
+
+    {{#if (eq viewType "card")}}
+      <div class="column is-12">
+        {{feed-item-view-card item=item seen='seen'}}
+      </div>
+    {{/if}}
+  {{/each}}
+
+</div>
+
+{{#infinity-loader infinityModel=newsItems triggerOffset=1000 eventDebounce=25}}
+  <div class="column is-12 has-text-centered">
+
+    <div class="spinner">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+
+    <p class="spinner-message">fetching more...</p>
+
+  </div>
+{{/infinity-loader}}

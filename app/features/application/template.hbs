@@ -1,0 +1,12 @@
+<section class="section">
+  <div class="container is-fluid">
+    {{site-header
+      currentUser=currentUser
+      session=session
+      login='login'
+      logout='logout'
+    }}
+
+    {{outlet}}
+  </div>
+</section>

@@ -1,0 +1,43 @@
+.feed-item-view-card {
+
+  margin-bottom: 25px;
+
+  .item-image {
+    height: 78px;
+    margin-right: 20px;
+    width: 130px;
+
+    img {
+      border-radius: .2rem;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .item-title {
+    font-size: 14px;
+    line-height: normal;
+    color: #333;
+    font-family: sans-serif;
+    font-weight: 700;
+  }
+
+  .item-description {
+    color: #9e9e9e;
+    font-size: 13px;
+    line-height: 17px;
+    margin-top: .25rem;
+    margin-bottom: 10px;
+  }
+
+  .item-meta {
+    color: #a3a3a2;
+    font-size: 11px;
+    margin-top: 1px;
+  }
+
+  .item-link {
+    margin: 15px 0;
+  }
+
+}

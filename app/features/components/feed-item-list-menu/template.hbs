@@ -1,0 +1,22 @@
+<div class="columns is-hidden-mobile">
+  <div class="column is-12">
+
+    <div class="feed-item-list-menu is-pulled-right">
+      {{#rl-dropdown-container class="aurora-dropdown-menu "}}
+        {{#rl-dropdown-toggle tagName="div" class="dropdown-title Open button"}}<i class="fa fa-fw fa-bars"></i>{{/rl-dropdown-toggle}}
+        {{#rl-dropdown tagName="div" class="menu-dropdown" closeOnChildClick=true}}
+          <ul class="menu-dropdownItems">
+            <li {{action "setView" "list"}}>
+              List View
+            </li>
+
+            <li {{action "setView" "card"}}>
+              Card View
+            </li>
+          </ul>
+        {{/rl-dropdown}}
+      {{/rl-dropdown-container}}
+    </div>
+
+  </div>
+</div>
