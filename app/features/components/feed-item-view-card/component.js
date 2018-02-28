@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import {set, get} from '@ember/object';
+import {get, set} from '@ember/object';
 
 export default Ember.Component.extend({
 
@@ -9,9 +9,9 @@ export default Ember.Component.extend({
 
   actions: {
     seen(feedItem) {
-      // this.sendAction('seen', feedItem);
+      this.sendAction('seen', feedItem);
 
-       feedItem.unloadRecord();
+      feedItem.unloadRecord();
     }
   }
 
