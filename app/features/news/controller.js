@@ -1,20 +1,20 @@
 import Controller from '@ember/controller';
 import {inject as service} from '@ember/service';
 import {computed, get, set} from '@ember/object';
-import EmberPusher from "ember-pusher";
 
-export default Controller.extend(EmberPusher.Bindings, {
+export default Controller.extend({
   currentUser: service(),
   session: service(),
-  pusher: service(),
 
-  viewType: computed(function () {
-    if (get(this, 'session.isAuthenticated')) {
-      return get(this, 'currentUser.user.view');
-    } else {
-      return "card";
-    }
-  }),
+  // viewType: computed(function () {
+  //   if (get(this, 'session.isAuthenticated')) {
+  //     return get(this, 'currentUser.user.view');
+  //   } else {
+  //     return "card";
+  //   }
+  // }),
+
+  viewType: "card",
 
   actions: {
     setView(view) {
@@ -22,12 +22,9 @@ export default Controller.extend(EmberPusher.Bindings, {
     },
 
     seen(feedItem) {
-      const profile = get(this, 'session.data.authenticated.profile');
-      const currentUser = get(this, 'store').peekRecord('user', get(profile, 'sub'));
-
-      get(feedItem, 'seenBy');
-
-      feedItem.save();
+      get(this, 'store').unloadRecord(feedItem);
     },
+
   }
-});
+})
+;

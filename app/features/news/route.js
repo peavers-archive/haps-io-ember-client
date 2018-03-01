@@ -19,6 +19,8 @@ export default Route.extend(InfinityRoute, {
 
   setupController(controller, models) {
     controller.setProperties(models);
-  }
+  },
+
+
 
 });
