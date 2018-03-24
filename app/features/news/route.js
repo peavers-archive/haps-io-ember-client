@@ -1,13 +1,10 @@
 import Route from '@ember/routing/route';
 import RSVP from "rsvp";
-import {computed, get, set} from '@ember/object';
-import {inject as service} from '@ember/service'
 import InfinityRoute from "ember-infinity/mixins/route";
 
 export default Route.extend(InfinityRoute, {
-  session: service(),
 
-  model(params) {
+  model() {
     return RSVP.hash({
       newsItems: this.infinityModel("newsItem", {
         perPage: 25,
@@ -20,7 +17,5 @@ export default Route.extend(InfinityRoute, {
   setupController(controller, models) {
     controller.setProperties(models);
   },
-
-
 
 });

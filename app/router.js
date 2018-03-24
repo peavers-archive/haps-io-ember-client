@@ -7,11 +7,7 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function () {
-  this.route('news', function () {});
-
-  this.route('users', function () {
-    this.route('edit', {path: '/edit/:user_id'});
-  });
+  this.route('news');
   this.route('loading');
 });
 

@@ -1,19 +1,9 @@
 <div class="columns is-multiline">
-
   {{#each newsItems as |item|}}
-    {{#if (eq viewType "list")}}
-      <div class="column is-12">
-        {{feed-item-view-list item=item seen='seen'}}
-      </div>
-    {{/if}}
-
-    {{#if (eq viewType "card")}}
-      <div class="column is-12">
-        {{feed-item-view-card item=item seen='seen'}}
-      </div>
-    {{/if}}
+    <div class="column is-12">
+      {{feed-item-view-card item=item seen='seen'}}
+    </div>
   {{/each}}
-
 </div>
 
 {{#infinity-loader infinityModel=newsItems triggerOffset=1000 eventDebounce=25}}
