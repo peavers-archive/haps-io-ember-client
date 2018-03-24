@@ -18,7 +18,7 @@ module.exports = function (environment) {
     },
 
     APP: {
-      HAPS: 'https://q5opka4cj0.execute-api.ap-southeast-2.amazonaws.com/Prod',
+      HAPS: 'https://api.haps.io',
       PUSHER_KEY: 'a4db97927c0123c43fe8',
       PUSHER_SECRET: '6cc2e1a762ff175c4f68'
     }
@@ -35,7 +35,7 @@ module.exports = function (environment) {
   };
 
   if (environment === 'development') {
-    ENV.APP.HAPS = "https://q5opka4cj0.execute-api.ap-southeast-2.amazonaws.com/Prod"
+    ENV.APP.HAPS = "https://api.haps.io"
   }
 
   if (environment === 'test') {
