@@ -12,27 +12,26 @@
       </div>
 
       <div class="column is-5">
-        <div class="item-title">
-          <a href="{{item.link}}" target="_blank">
-            {{item.title}}
-          </a>
+        <div class="item-title" {{action 'toggleBody'}}>
+          {{item.title}}
         </div>
 
         <div class="item-meta">
-          {{moment-calendar item.createdAt}} from <a href="{{item.sourceLink}}">{{item.sourceLink}}</a>
+          {{moment-calendar item.createdAt}} source {{item.sourceLink}}
         </div>
 
         <div class="item-description">
           {{item.description}}
         </div>
+
+        {{#if hasBodyDisplayed}}
+          <div class="item-body">
+            {{{item.body}}}
+          </div>
+        {{/if}}
+
       </div>
-
-      <div class="column is-1 is-hidden-mobile">
-
-      </div>
-
     </div>
-
 
   </div>
 {{/unless}}
