@@ -6,10 +6,9 @@ $link: $secondary;
 $link-hover: $primary;
 
 @import "node_modules/bulma/bulma.sass";
-@import "components/skeleton-loading";
 
+@import "components/loading";
 @import "components/card";
 @import "components/feed-item-view-card";
 @import "components/site-header";
 @import "components/site-footer";
-
