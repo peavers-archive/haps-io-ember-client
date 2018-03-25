@@ -19,7 +19,20 @@
         </div>
 
         <div class="item-meta">
-          {{moment-calendar item.createdAt}} - {{item.sourceLink}}
+          <div class="level">
+            <div class="level-left">
+              <div class="tags">
+                {{#each item.classifications as |category|}}
+                  <div class="tag">{{category.name}}</div>
+                {{/each}}
+              </div>
+            </div>
+
+            <div class="level-right">
+              {{moment-calendar item.createdAt}}
+            </div>
+
+          </div>
         </div>
 
         <div class="item-description">

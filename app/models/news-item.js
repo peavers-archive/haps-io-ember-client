@@ -5,6 +5,7 @@ export default Model.extend({
   title: attr('string'),
   description: attr('string'),
   body: attr('string'),
+  classifications: attr(),
   createdAt: attr('date'),
   link: attr('string'),
   image: attr('string'),
