@@ -1,5 +1,5 @@
 {{#if item.body}}
-  <div class="content feed-item-view-card">
+  <div class="content feed-item-view-card" {{action 'toggleBody'}}>
 
     <div class="columns">
 
@@ -14,7 +14,7 @@
       </div>
 
       <div class="column is-5">
-        <div class="item-title" {{action 'toggleBody'}}>
+        <div class="item-title">
           {{item.title}}
         </div>
 
