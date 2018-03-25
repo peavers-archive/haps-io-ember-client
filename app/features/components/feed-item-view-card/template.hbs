@@ -1,4 +1,4 @@
-{{#unless isSeen}}
+{{#if item.body}}
   <div class="content feed-item-view-card">
 
     <div class="columns">
@@ -7,6 +7,8 @@
         <div class="item-image">
           {{#if item.image}}
             <img src="data:image/jpeg;base64,{{item.image}}">
+          {{else}}
+            <span class="no-image">?</span>
           {{/if}}
         </div>
       </div>
@@ -34,4 +36,4 @@
     </div>
 
   </div>
-{{/unless}}
+{{/if}}
