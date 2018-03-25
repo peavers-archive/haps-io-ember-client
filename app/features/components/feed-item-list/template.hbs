@@ -1,12 +1,12 @@
 <div class="columns is-multiline">
   {{#each newsItems as |item|}}
     <div class="column is-12">
-      {{feed-item-view-card item=item seen='seen'}}
+      {{feed-item-view-card item=item}}
     </div>
   {{/each}}
 </div>
 
-{{#infinity-loader infinityModel=newsItems triggerOffset=1000 eventDebounce=25}}
+{{#infinity-loader infinityModel=newsItems hideOnInfinity=true}}
   <div class="column is-12 has-text-centered">
 
     <div class="spinner">
