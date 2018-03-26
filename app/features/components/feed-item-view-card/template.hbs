@@ -16,9 +16,16 @@
       <div class="column">
 
         <div class="tags">
-          {{#each item.classifications as |category|}}
-            <div class="tag is-outlined">{{category.name}}</div>
-          {{/each}}
+          {{#if item.classification}}
+            {{#each item.classification as |classification|}}
+              <div class="tag is-outlined">{{classification.name}}</div>
+            {{/each}}
+
+          {{else}}
+            <div class="tag is-outlined">I don't know...</div>
+
+          {{/if}}
+
         </div>
 
         <div class="item-title">
