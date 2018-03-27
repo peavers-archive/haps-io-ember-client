@@ -1,4 +1,4 @@
-<div class="column is-6">
+<div class="column is-12">
 
   <div class="level">
     <div class="level-left">
@@ -6,9 +6,15 @@
     </div>
 
     <div class="level-right">
-      {{x-toggle theme='material' value=myValue onToggle=(action (mut myValue))}}
+      {{x-toggle
+        theme='material'
+        size='small'
+        value=item.state
+        onLabel='Enabled::true'
+        offLabel='Disabled::false'
+        onToggle=(action 'filter')
+      }}
     </div>
   </div>
-
 
 </div>

@@ -17,21 +17,20 @@
               <span class="icon">
           <i class="fas fa-filter"></i>
             </span>
-              <span>Filters</span>
+
             </a>
           {{/rl-dropdown-toggle}}
           {{#rl-dropdown tagName="div" class="menu-dropdown" closeOnChildClick=false}}
 
             <li class="is-disabled has-text-centered">
               <p>Filters are created dynamically using natural language learning intelligence</p>
-
-              <p>These don't work just yet</p>
             </li>
 
           <li class="dropdown-divider"></li>
 
             {{classification-list
               classifications=classifications
+              filter='filter'
             }}
           {{/rl-dropdown}}
         {{/rl-dropdown-container}}

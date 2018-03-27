@@ -1,4 +1,25 @@
-{{feed-item-list
-  infinityLoad=infinityLoad
-  newsItems=newsItems
-}}
+<section class="section">
+  <div class="container is-fluid">
+    {{site-header
+      classifications=classifications
+      filter='filter'
+    }}
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="notification has-text-centered">
+      User accounts and working filters are coming soon. Just need more free time!
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-fluid">
+    {{feed-item-list
+      infinityLoad=infinityLoad
+      newsItems=newsItems
+    }}
+  </div>
+</section>
