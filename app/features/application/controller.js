@@ -1,0 +1,40 @@
+import Controller from '@ember/controller';
+import {inject as service} from '@ember/service'
+import {get, set} from '@ember/object'
+
+export default Controller.extend({
+  session: service(),
+
+  actions: {
+
+    login() {
+      const lockOptions = {
+        theme: {
+          logo: 'https://haps.io/assets/favicon-4bffc8bcbd4a4850e47bb9de7db7a61a.png',
+          primaryColor: '#757ffc',
+        },
+        languageDictionary: {
+          title: "haps.io login"
+        },
+        autoclose: false,
+        autofocus: true,
+        closable: true,
+
+        auth: {
+          oidcConformant: true,
+          auth: {
+            params: {
+              scope: 'openid profile email user_metadata',
+            },
+          }
+        }
+      };
+
+      get(this, 'session').authenticate('authenticator:auth0-lock', lockOptions);
+    },
+
+    logout() {
+      get(this, 'session').invalidate();
+    }
+  }
+});

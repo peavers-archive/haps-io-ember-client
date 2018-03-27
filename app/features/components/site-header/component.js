@@ -3,9 +3,14 @@ import Component from '@ember/component';
 export default Component.extend({
 
   actions: {
-    filter(item) {
-      this.sendAction("filter", item)
+    login() {
+      this.sendAction('login')
+    },
+
+    logout() {
+      this.sendAction('logout')
     }
   }
+
 
 });

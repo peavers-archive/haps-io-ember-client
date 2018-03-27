@@ -10,32 +10,35 @@
     <div class="navbar-end">
 
       <div class="navbar-item">
-        {{#rl-dropdown-container class="aurora-dropdown-menu"}}
+        {{#if session.isAuthenticated}}
+          {{#rl-dropdown-container class="aurora-dropdown-menu"}}
 
-          {{#rl-dropdown-toggle tagName="div" class="dropdown-title Open"}}
-            <a class="button">
-              <span class="icon">
-          <i class="fas fa-filter"></i>
-            </span>
+            {{#rl-dropdown-toggle tagName="div" class="dropdown-title Open"}}
+              <div class="people-avatar">
+                <img src="{{session.data.authenticated.profile.picture}}"><i
+                class="fa fa-fw fa-angle-down"></i>
+              </div>
+            {{/rl-dropdown-toggle}}
 
-            </a>
-          {{/rl-dropdown-toggle}}
-          {{#rl-dropdown tagName="div" class="menu-dropdown" closeOnChildClick=false}}
-
-            <li class="is-disabled has-text-centered">
-              <p>Filters are created dynamically using natural language learning intelligence</p>
-            </li>
-
-          <li class="dropdown-divider"></li>
-
-            {{classification-list
-              classifications=classifications
-              filter='filter'
-            }}
-          {{/rl-dropdown}}
-        {{/rl-dropdown-container}}
+            {{#rl-dropdown tagName="div" class="menu-dropdown" closeOnChildClick=true}}
+              <ul class="menu-dropdownItems">
+                <li class="is-disabled">
+                  {{session.data.authenticated.profile.name}}
+                </li>
+                <li class="divider"></li>
+                <li>
+                  {{#link-to "settings" session.data.authenticated.profile.email}}Settings{{/link-to}}
+                </li>
+                <li>
+                  <a href="#" {{action "logout" }}>Logout</a>
+                </li>
+              </ul>
+            {{/rl-dropdown}}
+          {{/rl-dropdown-container}}
+        {{else}}
+          <a class="button" {{action "login"}}><i class="fas fa-lock"></i> </a>
+        {{/if}}
       </div>
-
     </div>
   </div>
 </nav>

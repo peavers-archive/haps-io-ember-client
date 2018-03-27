@@ -1,1 +1,15 @@
-{{outlet}}
+<section class="section">
+  <div class="container is-fluid">
+    {{site-header
+      session=session
+      login='login'
+      logout='logout'
+    }}
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-fluid">
+    {{outlet}}
+  </div>
+</section>
