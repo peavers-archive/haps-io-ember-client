@@ -15,7 +15,7 @@ export default Route.extend(InfinityRoute, {
         user: get(this, 'store').queryRecord('user', {email: get(this, 'session.data.authenticated.profile.email')}),
         classifications: get(this, 'store').findAll('classification'),
         newsItems: this.infinityModel("newsItem", {
-          perPage: 10,
+          perPage: 25,
           startingPage: 0,
           modelPath: 'controller.newsItems',
           filter: this.get('filter'),
@@ -26,7 +26,7 @@ export default Route.extend(InfinityRoute, {
     return RSVP.hash({
       classifications: get(this, 'store').findAll('classification'),
       newsItems: this.infinityModel("newsItem", {
-        perPage: 10,
+        perPage: 25,
         startingPage: 0,
         modelPath: 'controller.newsItems',
         filter: this.get('filter'),
