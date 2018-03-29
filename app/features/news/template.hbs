@@ -1,8 +1,23 @@
 <section class="section">
   <div class="container is-fluid">
+    <div class="columns">
+      <div class="column is-6 is-offset-3">
+        <div class="notification has-text-centered is-primary">
+          <p><strong>UPDATE:</strong> Filters are now live! Login to configure what you don't want to see.</p>
+          <hr>
+          <p><i class="fas fa-bug"></i> You may have to login twice the first time.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-fluid">
     {{feed-item-list
       infinityLoad=infinityLoad
       newsItems=newsItems
+      user=user
     }}
   </div>
 </section>

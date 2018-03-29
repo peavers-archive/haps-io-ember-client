@@ -1,9 +1,10 @@
 <section class="section">
   <div class="container is-fluid">
     <div class="columns">
-      <div class="column is-4 is-offset-4">
-        <div class="notification has-text-centered">
-          Not working yet!
+      <div class="column is-6 is-offset-3">
+        <div class="notification has-text-centered is-primary">
+          <p>Hide news articles you're not interested in.</p>
+          <p>Once set here, you might need to refresh the news page for changes to take effect</p>
         </div>
       </div>
     </div>
@@ -14,6 +15,7 @@
   <div class="container is-fluid">
     {{classification-list
       classifications=classifications
+      user=user
     }}
   </div>
 </section>

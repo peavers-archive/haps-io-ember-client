@@ -31,7 +31,7 @@ module.exports = function (environment) {
 
 
   if (environment === 'development') {
-    ENV.APP.HAPS = "https://api.haps.io"
+    ENV.APP.HAPS = "http://localhost:8080"
   }
 
   return ENV;

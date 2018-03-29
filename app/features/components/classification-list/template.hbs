@@ -1,5 +1,9 @@
 <div class="columns is-multiline">
   {{#each classifications as |classification|}}
-    {{classification-item item=classification filter='filter'}}
+    {{classification-item
+      item=classification
+      user=user
+      filter='filter'
+    }}
   {{/each}}
 </div>

@@ -27,7 +27,7 @@
                 </li>
                 <li class="divider"></li>
                 <li>
-                  {{#link-to "settings" session.data.authenticated.profile.email}}Settings{{/link-to}}
+                  {{#link-to "settings" user.id}}Settings{{/link-to}}
                 </li>
                 <li>
                   <a href="#" {{action "logout" }}>Logout</a>
@@ -36,7 +36,7 @@
             {{/rl-dropdown}}
           {{/rl-dropdown-container}}
         {{else}}
-          <a class="button" {{action "login"}}><i class="fas fa-lock"></i> </a>
+          <a class="button" {{action "login"}}>Login</a>
         {{/if}}
       </div>
     </div>

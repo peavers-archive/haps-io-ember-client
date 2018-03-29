@@ -1,17 +1,36 @@
 import Component from '@ember/component';
 import {get, set} from '@ember/object';
-import Ember from 'ember';
 
 export default Component.extend({
 
   tagName: "",
-  ajax: Ember.inject.service(),
+
+  didReceiveAttrs() {
+    this._super(...arguments);
+
+    const userClassifications = get(this, 'user.classification');
+    const item = get(this, 'item');
+
+    if (userClassifications.includes(item)) {
+      set(item, 'state', true);
+    }
+  },
 
   actions: {
     filter(data) {
       const item = get(this, 'item');
-      set(item, 'state', data);
-    }
-  },
+      const user = get(this, 'user');
 
+      set(item, 'state', data);
+
+      if (data) {
+        user.get('classification').pushObject(item);
+      } else {
+        user.get('classification').removeObject(item);
+      }
+
+      user.save();
+
+    },
+  }
 });
