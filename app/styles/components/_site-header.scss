@@ -57,9 +57,9 @@ $grey-500: #f4f4f4;
   .people-avatar {
 
     .fa-angle-down {
-      color: #bbb;
-      padding-top: 10px;
-      vertical-align: middle;
+      color: $primary !important;
+      margin-top: 12px;
+      margin-left: 5px;
     }
 
     img {
