@@ -6,7 +6,6 @@ import {inject as service} from '@ember/service';
 
 export default Route.extend(InfinityRoute, {
 
-  filter: [],
   session: service(),
 
   model() {
@@ -18,20 +17,18 @@ export default Route.extend(InfinityRoute, {
           perPage: 25,
           startingPage: 0,
           modelPath: 'controller.newsItems',
-          filter: this.get('filter'),
+        }),
+      });
+    } else {
+      return RSVP.hash({
+        classifications: get(this, 'store').findAll('classification'),
+        newsItems: this.infinityModel("newsItem", {
+          perPage: 25,
+          startingPage: 0,
+          modelPath: 'controller.newsItems',
         }),
       });
     }
-
-    return RSVP.hash({
-      classifications: get(this, 'store').findAll('classification'),
-      newsItems: this.infinityModel("newsItem", {
-        perPage: 25,
-        startingPage: 0,
-        modelPath: 'controller.newsItems',
-        filter: this.get('filter'),
-      }),
-    });
   },
 
   setupController(controller, models) {

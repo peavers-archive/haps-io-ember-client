@@ -10,11 +10,11 @@ export default Route.extend(ApplicationRouteMixin, {
   session: service(),
 
   model() {
-    if (get(this, 'session.data.authenticated.profile.email')) {
-      return RSVP.hash({
-        user: get(this, 'store').queryRecord('user', {email: get(this, 'session.data.authenticated.profile.email')}),
-      });
-    }
+    return RSVP.hash({
+      user: get(this, 'store').queryRecord('user', {email: get(this, 'session.data.authenticated.profile.email')}),
+    }).catch(() => {
+      console.log(">> Hey there pal, login to set custom filters :)");
+    });
   },
 
   setupController(controller, models) {

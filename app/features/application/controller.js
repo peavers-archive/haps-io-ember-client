@@ -19,14 +19,11 @@ export default Controller.extend({
         autoclose: true,
         autofocus: true,
         closable: true,
-
         auth: {
           oidcConformant: true,
-          auth: {
-            params: {
-              scope: 'openid profile email user_metadata',
-            },
-          }
+          params: {
+            scope: 'openid profile email user_metadata',
+          },
         }
       };
 
