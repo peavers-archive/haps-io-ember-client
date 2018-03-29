@@ -16,7 +16,7 @@ export default Controller.extend({
         languageDictionary: {
           title: "haps.io login"
         },
-        autoclose: false,
+        autoclose: true,
         autofocus: true,
         closable: true,
 
