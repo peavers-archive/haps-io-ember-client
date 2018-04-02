@@ -8,6 +8,7 @@ export default Controller.extend({
   actions: {
 
     login() {
+
       const lockOptions = {
         theme: {
           logo: 'https://haps.io/assets/favicon-4bffc8bcbd4a4850e47bb9de7db7a61a.png',
@@ -17,10 +18,8 @@ export default Controller.extend({
           title: "haps.io login"
         },
         autoclose: true,
-        autofocus: true,
         closable: true,
         auth: {
-          oidcConformant: true,
           params: {
             scope: 'openid profile email user_metadata',
           },

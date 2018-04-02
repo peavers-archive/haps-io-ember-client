@@ -9,7 +9,7 @@ export default Route.extend(InfinityRoute, {
   session: service(),
 
   model() {
-    if (get(this, 'session.data.authenticated.profile.email')) {
+    if (get(this, 'session.data.authenticated.profile')) {
       return RSVP.hash({
         user: get(this, 'store').queryRecord('user', {email: get(this, 'session.data.authenticated.profile.email')}),
         classifications: get(this, 'store').findAll('classification'),
