@@ -24,7 +24,6 @@ export default Controller.extend({
           params: {
             scope: 'openid profile email user_metadata',
           },
-       }
         }
       };
 
