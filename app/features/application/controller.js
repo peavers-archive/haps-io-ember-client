@@ -21,7 +21,7 @@ export default Controller.extend({
         closable: true,
         auth: {
           params: {
-            scope: 'openid profile email user_metadata id_token',
+            scope: 'openid profile email user_metadata token id_token',
           },
         }
       };
