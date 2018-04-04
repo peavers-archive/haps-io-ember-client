@@ -1,6 +1,6 @@
 import Route from '@ember/routing/route';
 import RSVP from "rsvp";
-import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
+import ApplicationRouteMixin from 'ember-simple-auth-auth0/mixins/application-route-mixin';
 
 import {get} from "@ember/object";
 import {inject as service} from '@ember/service';
