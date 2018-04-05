@@ -15,11 +15,11 @@ export default Component.extend({
     },
 
     read(newsItem) {
+      this.toggleProperty('hasBeenRead');
+
       let user = get(this, 'user');
       get(user, 'read').pushObject(newsItem);
-      user.save().then(() => {
-        this.toggleProperty('hasBeenRead');
-      });
+      user.save();
     }
   }
 
