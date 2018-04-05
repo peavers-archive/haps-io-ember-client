@@ -1,5 +1,5 @@
 {{#unless hasBeenRead}}
-  <div class="content feed-item-view-card" {{action 'toggleBody'}}>
+  <div class="content feed-item-view-card">
 
     <div class="columns">
 
@@ -13,8 +13,7 @@
         </div>
       </div>
 
-      <div class="column is-gapless">
-
+      <div class="column is-gapless" {{action 'toggleBody'}}>
         <div class="tags">
           {{#if item.classification}}
             {{#each item.classification as |classification|}}
@@ -41,6 +40,7 @@
           </div>
         {{/if}}
 
+
       </div>
 
       {{#if  user}}
@@ -50,6 +50,5 @@
       {{/if}}
 
     </div>
-
   </div>
 {{/unless}}
