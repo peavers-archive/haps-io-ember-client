@@ -8,10 +8,10 @@
     <div class="level-right">
       {{x-toggle
         size='small'
-        value=item.state
+        value=state
         onLabel='Enabled::true'
         offLabel='Disabled::false'
-        onToggle=(action 'filter')
+        onToggle=(action 'toggleClassification')
       }}
     </div>
   </div>

@@ -1,10 +1,7 @@
 .feed-item-view-card {
   padding: 10px;
   transition: all linear .1s;
-
   margin-bottom: 20px;
-
-  //box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
 
   &:hover {
     cursor: pointer;
@@ -71,6 +68,16 @@
 
   .item-link {
     margin: 15px 0;
+  }
+
+  .item-actions {
+    background: rgba(247, 247, 247, 0.38);
+
+    .fa-check {
+      :hover {
+        color: $primary;
+      }
+    }
   }
 
 }

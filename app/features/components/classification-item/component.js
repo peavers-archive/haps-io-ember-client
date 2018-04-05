@@ -1,32 +1,42 @@
 import Component from '@ember/component';
-import {get, set} from '@ember/object';
+import {get, set, computed} from '@ember/object';
+import classification from "../../../models/classification";
 
 export default Component.extend({
 
   tagName: "",
 
+  state: false,
+
   didReceiveAttrs() {
     this._super(...arguments);
 
-    const userClassifications = get(this, 'user.classification');
     const item = get(this, 'item');
+    const userClassifications = get(this, 'user.classification');
 
     if (userClassifications.includes(item)) {
-      set(item, 'state', true);
+      set(this, 'state', true);
+    } else {
+      set(this, 'state', false);
     }
   },
 
-  actions: {
-    filter(data) {
-      const item = get(this, 'item');
-      const user = get(this, 'user');
 
-      set(item, 'state', data);
+  actions: {
+    toggleClassification(data) {
+      const user = get(this, 'user');
+      const item = get(this, 'item');
 
       if (data) {
-        user.get('classification').pushObject(item);
+        user.get('classification').then((classification) => {
+          classification.pushObject(item);
+          set(this, 'state', true);
+        })
       } else {
-        user.get('classification').removeObject(item);
+        user.get('classification').then((classification) => {
+          classification.removeObject(item);
+          set(this, 'state', false);
+        })
       }
 
       user.save();

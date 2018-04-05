@@ -1,7 +1,7 @@
 import Route from '@ember/routing/route';
 import RSVP from "rsvp";
 import InfinityRoute from "ember-infinity/mixins/route";
-import {get} from "@ember/object";
+import {get, set, computed} from "@ember/object";
 import {inject as service} from '@ember/service';
 
 export default Route.extend(InfinityRoute, {
@@ -17,6 +17,7 @@ export default Route.extend(InfinityRoute, {
           perPage: 25,
           startingPage: 0,
           modelPath: 'controller.newsItems',
+          userEmail: get(this, 'session.data.authenticated.profile.email'),
         }),
       });
     } else {

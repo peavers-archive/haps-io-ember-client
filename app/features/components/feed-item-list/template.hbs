@@ -1,8 +1,9 @@
-{{#each filteredNews as |item|}}
-  {{feed-item-view-card
-    item=item
-    user=user
-  }}
+{{#each newsItems as |item|}}
+    {{feed-item-view-card
+      item=item
+      user=user
+      session=session
+    }}
 {{/each}}
 
 {{#infinity-loader infinityModel=newsItems hideOnInfinity=true}}

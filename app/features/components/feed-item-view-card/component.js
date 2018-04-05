@@ -3,27 +3,23 @@ import {get, set} from '@ember/object';
 
 export default Component.extend({
 
-  didReceiveAttrs() {
-    this._super(...arguments);
-
-    const item = get(this, 'item');
-    const userClassifications = get(this, 'user.classification');
-    const itemClassifications = get(item, 'classification');
-
-    if (userClassifications) {
-      userClassifications.forEach(function (value) {
-        if (itemClassifications.includes(value)) {
-          item.unloadRecord();
-        }
-      });
-    }
-  },
-
   hasBodyDisplayed: false,
+  hasBeenRead: false,
 
   actions: {
     toggleBody() {
+
+      console.log("called");
+
       return this.toggleProperty('hasBodyDisplayed')
+    },
+
+    read(newsItem) {
+      let user = get(this, 'user');
+      get(user, 'read').pushObject(newsItem);
+      user.save().then(() => {
+        this.toggleProperty('hasBeenRead');
+      });
     }
   }
 

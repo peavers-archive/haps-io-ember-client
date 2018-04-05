@@ -5,5 +5,6 @@ import DS from 'ember-data';
 export default Model.extend({
   email: attr('string'),
 
-  classification: DS.hasMany('classification')
+  read: DS.hasMany('newsItem'),
+  classification: DS.hasMany('classification'),
 });
