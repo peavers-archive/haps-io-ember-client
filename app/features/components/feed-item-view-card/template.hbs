@@ -1,4 +1,4 @@
-{{#unless hasBeenHidden}}
+{{#unless hiddenStatus}}
   <div class="content feed-item-view-card ">
 
     <div class="columns">
@@ -14,7 +14,7 @@
       </div>
 
       <div class="column">
-        <div class="item-title {{if hasBeenRead 'read'}}">
+        <div class="item-title {{if readStatus 'read'}}">
           <div class="columns">
             <div class="column is-10" {{action 'toggleBody'}}>
               {{item.title}}
@@ -30,13 +30,11 @@
                           <i class="fas fa-times-circle"></i>
                         </a>
                       </li>
-                      {{#unless hasBeenRead}}
                         <li>
-                          <a href="#" {{action 'read'}} title="Mark this news as read">
+                          <a href="#" {{action 'read'}} title="Mark this news as read"  class="is-disabled">
                             <i class="fas fa-check-circle"></i>
                           </a>
                         </li>
-                      {{/unless}}
                     {{/if}}
                     <li>
                       <a href="{{item.link}}" target="_blank" title="Go to source article">

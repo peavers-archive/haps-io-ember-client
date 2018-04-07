@@ -21,16 +21,15 @@
 
             {{#rl-dropdown tagName="div" class="menu-dropdown" closeOnChildClick=true}}
               <ul class="menu-dropdownItems">
-                <li class="is-disabled">
-                  {{session.data.authenticated.profile.name}}
-                </li>
-                <li class="divider"></li>
+
                 <li>
                   {{#link-to "settings" user.id}}Settings{{/link-to}}
                 </li>
                 <li>
                   {{#link-to "archives"}}The archives{{/link-to}}
                 </li>
+
+                <li class="divider"></li>
                 <li>
                   <a href="#" {{action "logout" }}>Logout</a>
                 </li>

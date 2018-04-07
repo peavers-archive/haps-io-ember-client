@@ -11,7 +11,7 @@ export default Route.extend(InfinityRoute, {
   model() {
     const userEmail = get(this, 'session.data.authenticated.profile.email');
     const infinity = this.infinityModel("newsItem", {
-      perPage: 25,
+      perPage: 10,
       startingPage: 0,
       modelPath: 'controller.newsItems',
       userId: userEmail,
@@ -29,5 +29,6 @@ export default Route.extend(InfinityRoute, {
   setupController(controller, models) {
     controller.setProperties(models);
   },
+
 
 });

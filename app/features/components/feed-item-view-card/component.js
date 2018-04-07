@@ -1,11 +1,8 @@
 import Component from '@ember/component';
-import {get, set} from '@ember/object';
-import {inject as service} from '@ember/service';
+import {get, set, computed} from '@ember/object';
 
 export default Component.extend({
   hasBodyDisplayed: false,
-  hasBeenHidden: false,
-  hasBeenRead: false,
   hasMouseInside: false,
 
   mouseEnter() {
@@ -16,18 +13,27 @@ export default Component.extend({
     set(this, 'hasMouseInside', false)
   },
 
-  didReceiveAttrs() {
-    this._super(...arguments);
+  hiddenStatus: computed('user.hidden', function () {
+    const item = get(this, 'item');
+    const userHidden = get(this, 'user.hidden');
 
+    if (userHidden) {
+      if (userHidden.includes(item)) {
+        return true;
+      }
+    }
+  }),
+
+  readStatus: computed('user.read', function () {
     const item = get(this, 'item');
     const userRead = get(this, 'user.read');
 
     if (userRead) {
       if (userRead.includes(item)) {
-        set(this, 'hasBeenRead', true);
+        return true;
       }
     }
-  },
+  }),
 
   actions: {
     toggleBody() {
@@ -72,7 +78,6 @@ export default Component.extend({
       });
 
       set(this, 'hasBeenHidden', true);
-
     }
   }
 
