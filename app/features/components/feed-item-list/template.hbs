@@ -1,10 +1,10 @@
 {{#each newsItems as |item|}}
-    {{feed-item-view-card
-      item=item
-      user=user
-      session=session
-    }}
+  {{feed-item-view-card
+    item=item
+    user=user
+  }}
 {{/each}}
+
 
 {{#infinity-loader infinityModel=newsItems hideOnInfinity=true}}
   <div class="column is-12 has-text-centered">

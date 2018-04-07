@@ -1,10 +1,10 @@
-{{#unless hasBeenRead}}
-  <div class="content feed-item-view-card">
+{{#unless hasBeenHidden}}
+  <div class="content feed-item-view-card ">
 
     <div class="columns">
 
       <div class="column is-narrow is-hidden-mobile">
-        <div class="item-image">
+        <div class="item-image"  {{action 'toggleBody'}}>
           {{#if item.image}}
             <img src="data:image/jpeg;base64,{{item.image}}">
           {{else}}
@@ -13,25 +13,61 @@
         </div>
       </div>
 
-      <div class="column is-gapless" {{action 'toggleBody'}}>
-        <div class="tags">
-          {{#if item.classification}}
-            {{#each item.classification as |classification|}}
-              <div class="tag is-outlined">{{classification.name}}</div>
-            {{/each}}
-          {{/if}}
+      <div class="column">
+        <div class="item-title {{if hasBeenRead 'read'}}">
+          <div class="columns">
+            <div class="column is-10" {{action 'toggleBody'}}>
+              {{item.title}}
+            </div>
+
+            <div class="column is-2">
+              {{#if hasMouseInside}}
+                <div class="item-actions">
+                  <ul>
+                    {{#if user}}
+                      <li>
+                        <a href="#" {{action 'hide'}} title="Hide this news">
+                          <i class="fas fa-times-circle"></i>
+                        </a>
+                      </li>
+                      {{#unless hasBeenRead}}
+                        <li>
+                          <a href="#" {{action 'read'}} title="Mark this news as read">
+                            <i class="fas fa-check-circle"></i>
+                          </a>
+                        </li>
+                      {{/unless}}
+                    {{/if}}
+                    <li>
+                      <a href="{{item.link}}" target="_blank" title="Go to source article">
+                        <i class="fas fa-arrow-circle-right"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              {{/if}}
+            </div>
+          </div>
         </div>
 
-        <div class="item-title">
-          {{item.title}}
-        </div>
+        <div class="toggle-body"  {{action 'toggleBody'}}>
 
-        <div class="item-description">
-          {{item.description}}
-        </div>
+          <div class="tags">
+            {{#if item.classification}}
+              {{#each item.classification as |classification|}}
+                <div class="tag is-outlined">{{classification.name}}</div>
+              {{/each}}
+            {{/if}}
+          </div>
 
-        <div class="item-meta">
-          <span class="item-source">{{item.sourceLink}}</span> {{moment-calendar item.createdAt}}
+          <div class="item-description">
+            {{item.description}}
+          </div>
+
+          <div class="item-meta">
+            <span class="item-source">{{item.sourceLink}}</span> {{moment-calendar item.createdAt}}
+          </div>
+
         </div>
 
         {{#if hasBodyDisplayed}}
@@ -39,16 +75,9 @@
             {{{item.body}}}
           </div>
         {{/if}}
-
-
       </div>
-
-      {{#if  user}}
-        <div class="column is-narrow item-actions is-gapless">
-          <i class="fas fa-check" {{action "read" item}}></i>
-        </div>
-      {{/if}}
 
     </div>
   </div>
+
 {{/unless}}

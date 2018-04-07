@@ -1,16 +1,14 @@
 .feed-item-view-card {
   padding: 10px;
   transition: all linear .1s;
-  margin-bottom: 20px;
+  margin-bottom: 32px;
 
   &:hover {
     cursor: pointer;
-    background: #f7f7f7;
+  }
 
-    .tag {
-      background: #ededed;
-    }
-
+  .tags {
+    margin-bottom: 2px;
   }
 
   .item-image {
@@ -42,13 +40,19 @@
     color: #333;
     font-family: sans-serif;
     font-weight: 700;
+    position: relative;
+    margin-bottom: 10px;
+
+    &.read {
+      color: #888;
+    }
+
   }
 
   .item-description {
     color: #9e9e9e;
     font-size: 13px;
     line-height: 17px;
-    margin-top: .25rem;
     margin-bottom: 10px;
   }
 
@@ -71,12 +75,19 @@
   }
 
   .item-actions {
-    background: rgba(247, 247, 247, 0.38);
+    position: absolute;
+    top: 7px;
+    right: 0;
+    text-align: center;
 
-    .fa-check {
-      :hover {
-        color: $primary;
-      }
+    ul {
+      margin: 0;
+    }
+
+    li {
+      list-style: none;
+      display: inline-block;
+      padding: 0 5px;
     }
   }
 

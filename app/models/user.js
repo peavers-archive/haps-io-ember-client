@@ -6,5 +6,13 @@ export default Model.extend({
   email: attr('string'),
 
   read: DS.hasMany('newsItem'),
+  hidden: DS.hasMany('newsItem'),
+
   classification: DS.hasMany('classification'),
+
+  archiveCount: attr('number'),
+
+  toJSON: function() {
+    return this._super({ includeId: true });
+  }
 });

@@ -21,7 +21,6 @@ export default Component.extend({
     }
   },
 
-
   actions: {
     toggleClassification(data) {
       const user = get(this, 'user');
@@ -30,17 +29,18 @@ export default Component.extend({
       if (data) {
         user.get('classification').then((classification) => {
           classification.pushObject(item);
-          set(this, 'state', true);
-        })
+          user.save();
+        });
+
+        set(this, 'state', true);
       } else {
         user.get('classification').then((classification) => {
           classification.removeObject(item);
-          set(this, 'state', false);
-        })
+          user.save();
+        });
+
+        set(this, 'state', false);
       }
-
-      user.save();
-
     },
   }
 });

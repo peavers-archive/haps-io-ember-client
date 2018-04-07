@@ -3,8 +3,9 @@ import RSVP from "rsvp";
 import InfinityRoute from "ember-infinity/mixins/route";
 import {get, set, computed} from "@ember/object";
 import {inject as service} from '@ember/service';
+import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
 
-export default Route.extend(InfinityRoute, {
+export default Route.extend(InfinityRoute, AuthenticatedRouteMixin, {
 
   session: service(),
 
@@ -15,13 +16,11 @@ export default Route.extend(InfinityRoute, {
       startingPage: 0,
       modelPath: 'controller.newsItems',
       userId: userEmail,
-      archive: false
+      archive: true,
     });
 
-    return userEmail ? RSVP.hash({
+    return RSVP.hash({
       user: get(this, 'store').queryRecord('user', {email: userEmail}),
-      newsItems: infinity
-    }) : RSVP.hash({
       newsItems: infinity
     });
   },

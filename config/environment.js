@@ -16,14 +16,15 @@ module.exports = function (environment) {
 
     APP: {
       HAPS: 'https://api.haps.io'
-    }
+    },
   };
 
   ENV['ember-simple-auth'] = {
-      auth0: {
-        clientID: 'cO1P3T7TKDzT6FGozI4QqAkQAi86axdf',
-        domain: 'peavers.au.auth0.com',
-      }
+    authenticationRoute: 'news',
+    auth0: {
+      clientID: 'cO1P3T7TKDzT6FGozI4QqAkQAi86axdf',
+      domain: 'peavers.au.auth0.com',
+    }
   };
 
   if (environment === 'development') {
