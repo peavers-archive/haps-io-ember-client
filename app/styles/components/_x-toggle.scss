@@ -18,3 +18,7 @@
 .x-toggle:checked + label > .x-toggle-default.x-toggle-btn {
   background: $primary;
 }
+
+.x-toggle-name {
+  text-transform: capitalize;
+}
