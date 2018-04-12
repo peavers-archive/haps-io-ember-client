@@ -9,7 +9,6 @@ export default Controller.extend({
   actions: {
 
     login() {
-
       const lockOptions = {
         theme: {
           logo: 'https://haps.io/assets/favicon-4bffc8bcbd4a4850e47bb9de7db7a61a.png',
@@ -27,7 +26,6 @@ export default Controller.extend({
           },
         }
       };
-
       get(this, 'session').authenticate('authenticator:auth0-lock', lockOptions);
     },
 
