@@ -1,11 +1,8 @@
 import Component from '@ember/component';
-import {get, set, computed} from '@ember/object';
-import classification from "../../../models/classification";
+import {get, set} from '@ember/object';
 
 export default Component.extend({
-
   tagName: "",
-
   state: false,
 
   didReceiveAttrs() {

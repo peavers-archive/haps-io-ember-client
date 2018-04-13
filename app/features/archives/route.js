@@ -1,12 +1,11 @@
 import Route from '@ember/routing/route';
 import RSVP from "rsvp";
 import InfinityRoute from "ember-infinity/mixins/route";
-import {get, set, computed} from "@ember/object";
+import {get} from "@ember/object";
 import {inject as service} from '@ember/service';
 import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
 
 export default Route.extend(InfinityRoute, AuthenticatedRouteMixin, {
-
   session: service(),
 
   model() {

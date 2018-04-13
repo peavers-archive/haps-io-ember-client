@@ -1,5 +1,4 @@
 import Component from '@ember/component';
-import {computed, get, set} from '@ember/object';
 
 export default Component.extend({
   tagName: "",

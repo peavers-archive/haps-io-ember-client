@@ -25,7 +25,7 @@
                   {{#link-to "settings" user.id}}Settings{{/link-to}}
                 </li>
                 <li>
-                  {{#link-to "archives"}}The archives{{/link-to}}
+                  {{#link-to "archives"}}Old news{{/link-to}}
                 </li>
                 <li>
                   <a href="#" {{action "logout" }}>Logout</a>
@@ -34,7 +34,7 @@
             {{/rl-dropdown}}
           {{/rl-dropdown-container}}
         {{else}}
-          <a class="button" {{action "login"}}>Login</a>
+          <a class="button is-info" {{action "login"}}>Login</a>
         {{/if}}
       </div>
     </div>

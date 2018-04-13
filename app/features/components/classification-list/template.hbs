@@ -6,3 +6,17 @@
     }}
   {{/each}}
 </div>
+
+{{#infinity-loader infinityModel=classifications hideOnInfinity=true}}
+  <div class="column is-12 has-text-centered">
+
+    <div class="spinner">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+
+    <p class="spinner-message"></p>
+
+  </div>
+{{/infinity-loader}}

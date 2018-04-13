@@ -4,7 +4,6 @@ import {get, set} from "@ember/object";
 
 
 export default Component.extend({
-
   currentUser: service(),
 
   willRender() {
