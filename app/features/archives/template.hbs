@@ -1,6 +1,12 @@
-{{#site-message}}
-  News you threw away like old socks
-{{/site-message}}
+{{#if feed-item-list}}
+  {{#site-message}}
+    Old news you've hidden
+  {{/site-message}}
+{{else}}
+  {{#site-message}}
+    When you hide news you'll find it here
+  {{/site-message}}
+{{/if}}
 
 <section class="section">
   <div class="container">
