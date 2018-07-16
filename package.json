@@ -47,7 +47,7 @@
     "ember-rl-dropdown": "^0.10.2",
     "ember-simple-auth": "^1.5.1",
     "ember-simple-auth-auth0": "^4.0.0",
-    "ember-source": "~3.2.0",
+    "ember-source": "~3.3.0",
     "ember-toggle": "^5.2.1",
     "ember-truth-helpers": "^2.0.0",
     "eslint-plugin-ember": "^5.0.0",
