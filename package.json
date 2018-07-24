@@ -43,7 +43,7 @@
     "ember-load-initializers": "^1.0.0",
     "ember-maybe-import-regenerator": "^0.1.6",
     "ember-moment": "^7.6.0",
-    "ember-resolver": "^4.0.0",
+    "ember-resolver": "^5.0.0",
     "ember-rl-dropdown": "^0.10.2",
     "ember-simple-auth": "^1.5.1",
     "ember-simple-auth-auth0": "^4.0.0",
