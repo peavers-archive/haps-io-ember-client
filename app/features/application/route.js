@@ -8,6 +8,9 @@ export default Route.extend(ApplicationRouteMixin, {
   currentUser: service(),
 
   beforeSessionExpired() {
+
+
+
     get(this, "currentUser").deleteLocalUser();
 
     return RSVP.resolve();
