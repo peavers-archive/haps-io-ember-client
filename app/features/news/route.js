@@ -15,6 +15,7 @@ export default Route.extend(InfinityRoute, {
       startingPage: 0,
       modelPath: 'controller.newsItems',
       userId: userEmail,
+      
       archive: false
     });
 
