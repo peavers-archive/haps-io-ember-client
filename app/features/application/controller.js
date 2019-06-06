@@ -26,7 +26,12 @@ export default Controller.extend({
           params: {
             scope: "openid profile email user_metadata"
           }
+
+
         }
+
+
+
       };
       get(this, "session").authenticate(
         "authenticator:auth0-lock",
