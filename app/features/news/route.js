@@ -13,6 +13,8 @@ export default Route.extend(InfinityRoute, {
     const infinity = this.infinityModel("newsItem", {
       perPage: 10,
       startingPage: 0,
+      
+      
       modelPath: 'controller.newsItems',
       userId: userEmail,
       
