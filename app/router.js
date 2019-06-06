@@ -12,6 +12,8 @@ Router.map(function () {
 
   this.route('loading');
 
+
+
   this.route('settings', {path: 'settings/:user_id'});
 
   this.route('status');
