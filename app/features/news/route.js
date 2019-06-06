@@ -21,6 +21,7 @@ export default Route.extend(InfinityRoute, {
 
     return userEmail ? RSVP.hash({
       user: get(this, 'store').queryRecord('user', {email: userEmail}),
+      
       newsItems: infinity
     }) : RSVP.hash({
       newsItems: infinity
