@@ -27,16 +27,11 @@ export default Controller.extend({
             scope: "openid profile email user_metadata"
           }
         }
-
-
-
-
-
       };
       get(this, "session").authenticate(
         "authenticator:auth0-lock",
         lockOptions
-      )
+      );
     },
 
     logout() {
