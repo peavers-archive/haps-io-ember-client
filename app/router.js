@@ -9,8 +9,11 @@ const Router = EmberRouter.extend({
 
 Router.map(function () {
   this.route('news');
+
   this.route('loading');
+
   this.route('settings', {path: 'settings/:user_id'});
+
   this.route('status');
   this.route('archives');
 });
