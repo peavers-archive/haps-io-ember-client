@@ -12,6 +12,8 @@ export default Route.extend(ApplicationRouteMixin, {
 
 
 
+
+
     get(this, "currentUser").deleteLocalUser();
 
 
