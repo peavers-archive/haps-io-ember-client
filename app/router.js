@@ -16,6 +16,8 @@ Router.map(function () {
 
   this.route('status');
 
+
+
   this.route('archives');
 });
 
