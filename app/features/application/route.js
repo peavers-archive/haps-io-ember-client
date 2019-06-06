@@ -12,8 +12,6 @@ export default Route.extend(ApplicationRouteMixin, {
 
 
 
-
-
     get(this, "currentUser").deleteLocalUser();
 
     return RSVP.resolve();
