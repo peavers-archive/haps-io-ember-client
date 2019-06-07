@@ -17,8 +17,6 @@ export default Controller.extend({
         },
 
         languageDictionary: {
-
-
           title: "haps.io login"
         },
 
