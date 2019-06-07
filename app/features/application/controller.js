@@ -24,8 +24,6 @@ export default Controller.extend({
 
 
 
-
-
         closable: true,
         auth: {
           responseType: "token id_token",
