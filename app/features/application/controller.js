@@ -20,24 +20,7 @@ export default Controller.extend({
           title: "haps.io login"
         },
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         autoclose: true,
-
 
         closable: true,
         auth: {
@@ -50,7 +33,7 @@ export default Controller.extend({
       get(this, "session").authenticate(
         "authenticator:auth0-lock",
         lockOptions
-      )
+      );
     },
 
     logout() {
