@@ -10,5 +10,8 @@ export default DS.JSONAPIAdapter.extend({
 
 
 
+
+
+
   host: config.APP.HAPS
 });
