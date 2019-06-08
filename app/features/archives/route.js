@@ -14,18 +14,32 @@ export default Route.extend(InfinityRoute, AuthenticatedRouteMixin, {
       perPage: 25,
       startingPage: 0,
       modelPath: 'controller.newsItems',
+
+
+
+
+
+
       userId: userEmail,
       archive: true,
     });
 
     return RSVP.hash({
       user: get(this, 'store').queryRecord('user', {email: userEmail}),
+
+
+
+
       newsItems: infinity
     });
   },
 
   setupController(controller, models) {
-    controller.setProperties(models);
+
+
+
+
+    controller.setProperties(models)
   },
 
 });

@@ -20,6 +20,9 @@ export default Controller.extend({
           title: "haps.io login"
         },
 
+
+
+
         autoclose: true,
 
         closable: true,

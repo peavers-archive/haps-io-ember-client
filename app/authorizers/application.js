@@ -15,7 +15,16 @@ export default BaseAuthorizer.extend({
     } else {
 
 
-      debug('Could not find the authorization token in the session data for the jwt authorizer.');
+      debug('Could not find the authorization token in the session data for the jwt authorizer.')
+
+
+
+
+
+
+
+
+      ;
     }
   }
 });
