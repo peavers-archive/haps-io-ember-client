@@ -31,28 +31,4 @@ export default Route.extend({
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-});
+})

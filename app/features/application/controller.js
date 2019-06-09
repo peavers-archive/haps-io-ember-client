@@ -51,4 +51,9 @@ export default Controller.extend({
       get(this, "session").invalidate();
     }
   }
-});
+
+
+
+
+
+})
