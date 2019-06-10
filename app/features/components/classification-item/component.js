@@ -1,5 +1,5 @@
-import Component from '@ember/component';
-import {get, set} from '@ember/object';
+import Component from "@ember/component";
+import { get, set } from "@ember/object";
 
 export default Component.extend({
   tagName: "",
@@ -8,36 +8,36 @@ export default Component.extend({
   didReceiveAttrs() {
     this._super(...arguments);
 
-    const item = get(this, 'item');
-    const userClassifications = get(this, 'user.classification');
+    const item = get(this, "item");
+    const userClassifications = get(this, "user.classification");
 
     if (userClassifications.includes(item)) {
-      set(this, 'state', true);
+      set(this, "state", true);
     } else {
-      set(this, 'state', false);
+      set(this, "state", false);
     }
   },
 
   actions: {
     toggleClassification(data) {
-      const user = get(this, 'user');
-      const item = get(this, 'item');
+      const user = get(this, "user");
+      const item = get(this, "item");
 
       if (data) {
-        user.get('classification').then((classification) => {
+        user.get("classification").then(classification => {
           classification.pushObject(item);
           user.save();
         });
 
-        set(this, 'state', true);
+        set(this, "state", true);
       } else {
-        user.get('classification').then((classification) => {
+        user.get("classification").then(classification => {
           classification.removeObject(item);
           user.save();
         });
 
-        set(this, 'state', false);
+        set(this, "state", false);
       }
-    },
+    }
   }
 });

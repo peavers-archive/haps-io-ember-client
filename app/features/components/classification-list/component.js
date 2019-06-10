@@ -1,12 +1,12 @@
-import Component from '@ember/component';
+import Component from "@ember/component";
 
 export default Component.extend({
   tagName: "",
-  infinityLoadAction: 'infinityLoad',
+  infinityLoadAction: "infinityLoad",
 
   actions: {
     infinityLoad(infinityModel) {
-      this.sendAction('infinityLoadAction', infinityModel);
-    },
+      this.sendAction("infinityLoadAction", infinityModel);
+    }
   }
 });

@@ -1,21 +1,21 @@
-import Component from '@ember/component';
-import {get, set, computed} from '@ember/object';
+import Component from "@ember/component";
+import { get, set, computed } from "@ember/object";
 
 export default Component.extend({
   hasBodyDisplayed: false,
   hasMouseInside: false,
 
   mouseEnter() {
-    set(this, 'hasMouseInside', true)
+    set(this, "hasMouseInside", true);
   },
 
   mouseLeave() {
-    set(this, 'hasMouseInside', false)
+    set(this, "hasMouseInside", false);
   },
 
-  hiddenStatus: computed('user.hidden', function () {
-    const item = get(this, 'item');
-    const userHidden = get(this, 'user.hidden');
+  hiddenStatus: computed("user.hidden", function() {
+    const item = get(this, "item");
+    const userHidden = get(this, "user.hidden");
 
     if (userHidden) {
       if (userHidden.includes(item)) {
@@ -24,9 +24,9 @@ export default Component.extend({
     }
   }),
 
-  readStatus: computed('user.read', function () {
-    const item = get(this, 'item');
-    const userRead = get(this, 'user.read');
+  readStatus: computed("user.read", function() {
+    const item = get(this, "item");
+    const userRead = get(this, "user.read");
 
     if (userRead) {
       if (userRead.includes(item)) {
@@ -37,48 +37,47 @@ export default Component.extend({
 
   actions: {
     toggleBody() {
-      this.toggleProperty('hasBodyDisplayed')
+      this.toggleProperty("hasBodyDisplayed");
 
-      const user = get(this, 'user');
+      const user = get(this, "user");
 
       if (user) {
-        const item = get(this, 'item');
+        const item = get(this, "item");
 
-        user.get('read').then((read) => {
+        user.get("read").then(read => {
           read.pushObject(item);
           user.save();
         });
 
-        set(this, 'hasBeenRead', true);
+        set(this, "hasBeenRead", true);
       }
     },
 
     read() {
-      const user = get(this, 'user');
+      const user = get(this, "user");
 
       if (user) {
-        const item = get(this, 'item');
+        const item = get(this, "item");
 
-        user.get('read').then((read) => {
+        user.get("read").then(read => {
           read.pushObject(item);
           user.save();
         });
 
-        set(this, 'hasBeenRead', true);
+        set(this, "hasBeenRead", true);
       }
     },
 
     hide() {
-      const user = get(this, 'user');
-      const item = get(this, 'item');
+      const user = get(this, "user");
+      const item = get(this, "item");
 
-      user.get('hidden').then((hidden) => {
+      user.get("hidden").then(hidden => {
         hidden.pushObject(item);
         user.save();
       });
 
-      set(this, 'hasBeenHidden', true);
+      set(this, "hasBeenHidden", true);
     }
   }
-
 });
