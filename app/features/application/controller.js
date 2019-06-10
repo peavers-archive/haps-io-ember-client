@@ -22,23 +22,6 @@ export default Controller.extend({
 
         autoclose: true,
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         closable: true,
         auth: {
           responseType: "token id_token",
@@ -57,9 +40,4 @@ export default Controller.extend({
       get(this, "session").invalidate();
     }
   }
-
-
-
-
-
-})
+});

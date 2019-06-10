@@ -1,7 +1,6 @@
-import Component from '@ember/component';
-import {inject as service} from '@ember/service';
-import {get, set} from "@ember/object";
-
+import Component from "@ember/component";
+import { inject as service } from "@ember/service";
+import { get, set } from "@ember/object";
 
 export default Component.extend({
   currentUser: service(),
@@ -9,18 +8,16 @@ export default Component.extend({
   willRender() {
     this._super(...arguments);
 
-    set(this, 'user', get(this, 'currentUser').getLocalUser());
+    set(this, "user", get(this, "currentUser").getLocalUser());
   },
 
   actions: {
     login() {
-      this.sendAction('login')
+      this.sendAction("login");
     },
 
     logout() {
-      this.sendAction('logout')
+      this.sendAction("logout");
     }
   }
-
-
 });
