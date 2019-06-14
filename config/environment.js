@@ -1,12 +1,12 @@
-'use strict';
+"use strict";
 
-module.exports = function (environment) {
+module.exports = function(environment) {
   let ENV = {
-    modulePrefix: 'haps-ember-client',
-    podModulePrefix: 'haps-ember-client/features',
+    modulePrefix: "haps-ember-client",
+    podModulePrefix: "haps-ember-client/features",
     environment: environment,
-    rootURL: '/',
-    locationType: 'auto',
+    rootURL: "/",
+    locationType: "auto",
 
     EmberENV: {
       EXTEND_PROTOTYPES: {
@@ -15,20 +15,20 @@ module.exports = function (environment) {
     },
 
     APP: {
-      HAPS: 'https://api.haps.io'
-    },
-  };
-
-  ENV['ember-simple-auth'] = {
-    authenticationRoute: 'news',
-    auth0: {
-      clientID: 'cO1P3T7TKDzT6FGozI4QqAkQAi86axdf',
-      domain: 'peavers.au.auth0.com',
+      HAPS: "https://api.haps.io"
     }
   };
 
-  if (environment === 'development') {
-    ENV.APP.HAPS = "http://localhost:8080"
+  ENV["ember-simple-auth"] = {
+    authenticationRoute: "news",
+    auth0: {
+      clientID: "cO1P3T7TKDzT6FGozI4QqAkQAi86axdf",
+      domain: "peavers.au.auth0.com"
+    }
+  };
+
+  if (environment === "development") {
+    ENV.APP.HAPS = "http://localhost:8080";
   }
 
   return ENV;
